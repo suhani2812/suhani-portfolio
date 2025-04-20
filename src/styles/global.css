@@ -1,0 +1,143 @@
+:root {
+    --color-bg: #0a0a0f;
+    --color-primary: #9d4edd;
+    --color-secondary: #5a189a;
+    --color-accent: #7b2cbf;
+    --color-text: #f8f9fa;
+    --color-text-secondary: #adb5bd;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    overflow-x: hidden;
+  }
+  
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  
+  button {
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .section {
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .section {
+      padding: 1rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+  
+  nav {
+    background-color: #0a0a0f;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+  }
+  
+  nav a {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(157, 78, 221, 0.5);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    overflow: hidden;
+    transition: all 0.3s;
+    z-index: 1;
+  }
+  
+  nav a::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, 
+      #9d4edd 0%, 
+      rgba(157, 78, 221, 0.3) 25%, 
+      rgba(157, 78, 221, 0.1) 50%, 
+      rgba(157, 78, 221, 0.3) 75%, 
+      #9d4edd 100%);
+    background-size: 400% 400%;
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  nav a:hover {
+    color: white;
+    border-color: rgba(157, 78, 221, 0.8);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    transform: translateZ(10px);
+  }
+  
+  nav a:hover::before {
+    opacity: 0.7;
+    animation: holographic 3s infinite;
+  }
+  
+  @keyframes holographic {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Typewriter effect styles */
+.typewriter {
+  border-right: 0.15em solid #9d4edd; /* Cursor */
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+/* Blinking cursor animation */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #9d4edd }
+}
